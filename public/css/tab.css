@@ -1,0 +1,6 @@
+html, body { padding: 0; margin: 0; width: 810px; height: 800px; }
+/** Full width body **/
+body.full #wrapper { width: 810px; }
+/** Centered body with width of 520px; **/
+body.centered { text-align: center; }
+body.centered #wrapper { width: 520px; margin: auto; text-align: left; }
