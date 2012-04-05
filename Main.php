@@ -3,6 +3,12 @@
 if(is_file("DevConfig.php")) require_once 'DevConfig.php';
 else require_once 'Config.php';
 
+if(DEV_MODE) {
+	error_reporting(E_ALL);
+	ini_set("display_errors", TRUE);
+}
+
+
 require_once 'lib/facebook/facebook.php';
 
 $config = array();
@@ -16,14 +22,15 @@ $signed_request = $facebook->getSignedRequest();
 if($signed_request) {
 	define("IS_PAGE_ADMIN", $signed_request['page']['admin']);
 	define("IS_PAGE_FAN", $signed_request['page']['liked']);
+	define("USER_LOCALE", $signed_request['user']['locale']);
+	$page = $facebook->api("/" . $signed_request['page']['id'], 'GET');
 }
 
 
 if(DEV_MODE) {
-	error_reporting(E_ALL);
-	ini_set("display_errors", TRUE);
 	echo '<pre>';
 		print_r($signed_request);
+		print_r($page);
 	echo '</pre>';
 } else {
 	error_reporting(0);

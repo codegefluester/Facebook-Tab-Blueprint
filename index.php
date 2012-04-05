@@ -17,7 +17,9 @@
 				<!-- Put your header here -->
 			</header>
 			<section id="content">
-				
+				<h1>Hello Blueprint!</h1>
+				<p>You're<strong><?=IS_PAGE_FAN ? ' a ' : ' not a ';?></strong> fan of <?=$page['name']?></p>
+				<p>You're<strong><?=IS_PAGE_ADMIN ? ' an ' : ' not an ';?></strong> admin of <?=$page['name']?></p>
 			</section>
 			<footer>
 				<!-- Put your footer here -->
@@ -42,7 +44,7 @@
 		     var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
 		     if (d.getElementById(id)) {return;}
 		     js = d.createElement('script'); js.id = id; js.async = true;
-		     js.src = "//connect.facebook.net/" + TabConfig.locale + "/all.js";
+		     js.src = "//connect.facebook.net/" + <?=USER_LOCALE?> + "/all.js";
 		     ref.parentNode.insertBefore(js, ref);
 		   }(document));
 		</script>

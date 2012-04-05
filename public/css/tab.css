@@ -1,4 +1,5 @@
-html, body { padding: 0; margin: 0; width: 810px; height: 800px; }
+html, body { padding: 0; margin: 0; width: 810px; height: 800px; overflow: hidden; font-family: "Lucida Grande","Tahoma","Verdana","Arial",sans-serif; }
+body #wrapper { height: 100%; }
 /** Full width body **/
 body.full #wrapper { width: 810px; }
 /** Centered body with width of 520px; **/
