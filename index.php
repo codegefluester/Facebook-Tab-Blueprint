@@ -1,3 +1,4 @@
+<?php require_once 'Main.php'; ?>
 <!Doctype html>
 <html>
 	<head>
@@ -12,16 +13,24 @@
 	</head>
 	<body class="full">
 		<div id="wrapper">
-			
+			<header>
+				<!-- Put your header here -->
+			</header>
+			<section id="content">
+				
+			</section>
+			<footer>
+				<!-- Put your footer here -->
+			</footer>
 		</div>
+		<div id="fb-root"></div>
 		<script>
 		  window.fbAsyncInit = function() {
 		    FB.init({
-		      appId      : TabConfig.appId, // App ID
-		      channelUrl : TabConfig.channelUrl, // Channel File
-		      status     : TabConfig.status, // check login status
-		      cookie     : TabConfig.cookie, // enable cookies to allow the server to access the session
-		      xfbml      : TabConfig.xfbml  // parse XFBML
+		      appId		: '<?=FB_APP_ID?>', // App ID
+		      status	: true, // check login status
+		      cookie	: true, // enable cookies to allow the server to access the session
+		      xfbml     : true  // parse XFBML
 		    });
 		
 		    // Additional initialization code here
