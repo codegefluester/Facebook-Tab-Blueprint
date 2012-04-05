@@ -1,6 +1,8 @@
 <?php
 
-require_once 'DevConfig.php';
+if(is_file("DevConfig.php")) require_once 'DevConfig.php';
+else require_once 'Config.php';
+
 require_once 'lib/facebook/facebook.php';
 
 $config = array();
